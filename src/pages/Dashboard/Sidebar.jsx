@@ -2,6 +2,7 @@
 import { IoMdPeople } from "react-icons/io";
 import { Link } from "react-router-dom";
 
+
 export default function Sidebar() {
   return (
     <>
@@ -67,32 +68,32 @@ export default function Sidebar() {
             </svg>
           </span>
           <ul className="bg-[#6e8bb727] gap-1 rounded-md w-10 h-[305px] flex flex-col ul-item overflow-hidden">
-            <Link to="/dashboard" className="rounded-md text-[#6E8BB7] active:bg-blue-500 focus-within:bg-blue-500 focus-within:text-white">
+            <Link to="/dashboard"  className="rounded-md text-[#6E8BB7]  active:bg-blue-500 ">
               <li>
                 <i className="fa-solid fa-square-poll-vertical"></i>
               </li>
             </Link>
-            <Link to="/orders" className="rounded-md text-[#6E8BB7] active:bg-blue-500 focus-within:bg-blue-500 focus-within:text-white">
+            <Link to="/orders" className="rounded-md text-[#6E8BB7] active:bg-blue-500">
               <li>
                 <i className="fa-solid fa-cart-shopping"></i>
               </li>
             </Link>
-            <Link to="/clients" className="text-2xl rounded-md text-[#6E8BB7] active:bg-blue-500 focus-within:bg-blue-500 focus-within:text-white">
+            <Link to="/clients" className="text-2xl rounded-md text-[#6E8BB7] active:bg-blue-500">
             <li>
               <IoMdPeople />
             </li>
             </Link>
-            <Link className="rounded-md text-[#6E8BB7] active:bg-blue-500 focus-within:bg-blue-500 focus-within:text-white">
+            <Link to='/Promotions' className="rounded-md text-[#6E8BB7] active:bg-blue-500 ">
               <li>
                 <i className="fa-solid fa-shop"></i>
               </li>
             </Link>
-            <Link className="rounded-md text-[#6E8BB7] active:bg-blue-500 focus-within:bg-blue-500 focus-within:text-white">
+            <Link className="rounded-md text-[#6E8BB7] active:bg-blue-500 ">
               <li>
                 <i className="fa-solid fa-star"></i>
               </li>
             </Link>
-            <Link className="rounded-md text-[#6E8BB7] active:bg-blue-500 focus-within:bg-blue-500 focus-within:text-white">
+            <Link className="rounded-md text-[#6E8BB7] active:bg-blue-500 ">
               <li>
                 <i className="fa-solid fa-clock-rotate-left"></i>
               </li>

@@ -300,7 +300,7 @@ export default function StaticData() {
                     <p className="text-blue-500">{data.number}</p>
                   </span>
                   <p className="px-1 w-[104px] h-full flex items-center justify-center">
-                    {data.id}
+                  5262261
                   </p>
                   <span className="px-1 w-[120px] h-full flex items-center justify-center">
                     <p className="bg-[#38D9B933] px-2 py-1 rounded-md text-green-500">

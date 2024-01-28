@@ -5,7 +5,7 @@ export default function TopBarSecond() {
   return (
     <div className="flex flex-col w-full">
       <div className="w-full h-16 flex justify-between items-center pl-4">
-        <h2 className="text-xl font-bold text-[#303940]">Delever</h2>
+        <h2 className="text-xl font-bold text-[#303940]">Заказы</h2>
         <div className="h-full flex">
           <button className="border-l-2  w-[130px] h-full flex items-center justify-center gap-1">
             <svg
@@ -29,7 +29,7 @@ export default function TopBarSecond() {
             </svg>
             <p className="text-[#4094F7]">Действия</p>
           </button>
-          <Link to='createorder' className="border-l-2 transition-all w-[130px] h-full flex items-center text-[#1AC19D] justify-center gap-1 hover:bg-[#1AC19D] hover:text-white">
+          <Link className="border-l-2 transition-all w-[130px] h-full flex items-center text-[#1AC19D] justify-center gap-1 hover:bg-[#1AC19D] hover:text-white">
             <IoMdAdd />
             <p>Добавить</p>
           </Link>
