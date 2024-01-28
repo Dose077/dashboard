@@ -83,7 +83,7 @@ export default function Sidebar() {
               <IoMdPeople />
             </li>
             </Link>
-            <Link to='/Promotions' className="rounded-md text-[#6E8BB7] active:bg-blue-500 ">
+            <Link  className="rounded-md text-[#6E8BB7] active:bg-blue-500 ">
               <li>
                 <i className="fa-solid fa-shop"></i>
               </li>
@@ -98,7 +98,7 @@ export default function Sidebar() {
                 <i className="fa-solid fa-clock-rotate-left"></i>
               </li>
             </Link>
-            <Link className="rounded-md text-[#6E8BB7] active:bg-blue-500 focus-within:bg-blue-500 focus-within:text-white">
+            <Link to='/settings' className="rounded-md text-[#6E8BB7] active:bg-blue-500 focus-within:bg-blue-500 focus-within:text-white">
               <li>
                 <i className="fa-solid fa-gear"></i>
               </li>

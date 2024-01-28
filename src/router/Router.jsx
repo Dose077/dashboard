@@ -3,7 +3,8 @@ import Login from "./../pages/Login";
 import Dashboard from "./../pages/Dashboard/Dashboard";
 import Orders from "./../pages/Orders/Orders";
 import Clients from "../pages/Clients/Clients";
-import PromotionsPage from "../pages/Promotions/PromotionsPage";
+import SettingsPage from "../pages/Settings/SettingsPage";
+import NotFoundPage from "../pages/NotFound/NotFoundPage";
 
 export default function Router() {
  
@@ -16,7 +17,9 @@ export default function Router() {
         <Route index element={<Orders />} />
       </Route>
       <Route path="/clients" element={<Clients />}/>
-      <Route path="/Promotions" element={<PromotionsPage />}/>
+      <Route path="/settings" element={<SettingsPage />}/>
+      <Route path="*" element={<NotFoundPage />}/>
+      
 
     </Routes>
   );
