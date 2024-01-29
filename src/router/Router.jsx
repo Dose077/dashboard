@@ -5,6 +5,7 @@ import Orders from "./../pages/Orders/Orders";
 import Clients from "../pages/Clients/Clients";
 import SettingsPage from "../pages/Settings/SettingsPage";
 import NotFoundPage from "../pages/NotFound/NotFoundPage";
+import CompanyPage from "../pages/Settings/Comany/CompanyPage";
 
 export default function Router() {
  
@@ -18,6 +19,7 @@ export default function Router() {
       </Route>
       <Route path="/clients" element={<Clients />}/>
       <Route path="/settings" element={<SettingsPage />}/>
+      <Route path="/settings-company" element={<CompanyPage />}/>
       <Route path="*" element={<NotFoundPage />}/>
       
 

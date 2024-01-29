@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 const TopBar = () => {
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full bg-white">
     <div className="w-full h-16 flex justify-between items-center pl-4">
       <h2 className="text-xl font-bold text-[#303940]"></h2>
       <div className="h-full flex">

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function TopBarSecond() {
   return (
     <div className="flex flex-col w-full">
-      <div className="w-full h-16 flex justify-between items-center pl-4">
+      <div className="w-full h-16 flex justify-between items-center pl-4 bg-white">
         <h2 className="text-xl font-bold text-[#303940]">Заказы</h2>
         <div className="h-full flex">
           <button className="border-l-2  w-[130px] h-full flex items-center justify-center gap-1">
@@ -34,6 +34,7 @@ export default function TopBarSecond() {
             <p>Добавить</p>
           </Link>
         </div>
+        
       </div>
     </div>
   );

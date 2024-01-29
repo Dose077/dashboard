@@ -1,6 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+body{
+  background: #DCE9F9;
+}
+
 .bg-gradient-radial {
   background: rgb(0, 90, 215);
   background: linear-gradient(256deg, rgb(1, 97, 231) 0%, rgb(208, 221, 239) 55%, rgb(1, 92, 219) 100%);

@@ -47,7 +47,7 @@ export default function StaticData() {
 
   return (
     <>
-      <div className="w-full h-16 border flex justify-between items-center pl-4 bg-[#e5e9eb73] relative">
+      <div className="w-full h-16 border flex justify-between items-center pl-4 bg-white relative">
         <input
           type="text"
           placeholder="Поиск"
