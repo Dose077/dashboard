@@ -45,7 +45,8 @@ const rows = [
 
 export default function BasicTable() {
   return (
-    <TableContainer component={Paper}>
+  <div className="p-5">
+      <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
@@ -159,5 +160,6 @@ export default function BasicTable() {
         </TableBody>
       </Table>
     </TableContainer>
+  </div>
   );
 }

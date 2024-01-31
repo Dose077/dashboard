@@ -37,7 +37,26 @@ const SidBar = () => {
           <NavLink to='/rewiews'>Отзывы</NavLink>
         </li>
         <li className=" p-2 rounded  hover:text-white hover:bg-blue-500 active:bg-blue-500 focus-within:bg-blue-500 focus-within:text-white">
-          <NavLink to='/mailings'>Рассылка</NavLink>
+        <div>
+      <div className="relative mt-2 rounded-md shadow-sm">
+        <div className="">
+        </div>
+        Рассылка
+        <div className="absolute inset-y-0 right-0 flex items-center">
+       
+          <select
+            id="currency"
+            name="currency"
+            className="h-full rounded-md bg-transparent text-gray-500 "
+          >
+            <option ></option>
+            <option>Телеграм</option>
+            <option>СМС</option>
+            <option>Пуш</option>
+          </select>
+        </div>
+      </div>
+    </div>
         </li>
       </ul>
   </div>

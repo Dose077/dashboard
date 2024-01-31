@@ -9,9 +9,9 @@ import Clients from "../pages/Orders/Clients/Clients";
 import ClientsForm from "../pages/Orders/Clients/ClientsForm";
 import ReviewsPage from "../pages/Reviews/ReviewsPage";
 import BannersPage from "../pages/Reviews/Banners/BannersPage";
-import MailingsPage from "../pages/Reviews/Mailings/MailingsPage";
 import SharesPage from "../pages/Reviews/Shares/SharesPage";
 import RewiewsPage from "../pages/Reviews/Rewiews/RewiewsPage";
+import CompanyPage from "../pages/Settings/Comany/CompanyPage";
 
 export default function Router() {
  
@@ -27,9 +27,9 @@ export default function Router() {
       <Route path="/clients" element={<Clients />}/>
       <Route path="/clients/clients-form" element={<ClientsForm/>}/>
       <Route path="/settings" element={<SettingsPage />}/>
+      <Route path="/settings-company" element={<CompanyPage />}/>
       <Route path="/reviews" element={<ReviewsPage />}/>
       <Route path="/banners" element={<BannersPage />}/>
-      <Route path="/mailings" element={<MailingsPage />}/>
       <Route path="/rewiews" element={<RewiewsPage />}/>
       <Route path="/shares" element={<SharesPage />}/>
       <Route path="*" element={<NotFoundPage />}/>
