@@ -29,7 +29,7 @@ export default function TopBarSecond() {
             </svg>
             <p className="text-[#4094F7]">Действия</p>
           </button>
-          <Link className="border-l-2 transition-all w-[130px] h-full flex items-center text-[#1AC19D] justify-center gap-1 hover:bg-[#1AC19D] hover:text-white">
+          <Link to='orders-form' className="border-l-2 transition-all w-[130px] h-full flex items-center text-[#1AC19D] justify-center gap-1 hover:bg-[#1AC19D] hover:text-white">
             <IoMdAdd />
             <p>Добавить</p>
           </Link>

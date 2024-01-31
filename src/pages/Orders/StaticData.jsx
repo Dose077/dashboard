@@ -1,16 +1,12 @@
 import { useState } from "react";
-import { personalData, searchFilter } from "../../components/data";
-import { MdCloseFullscreen, MdEdit } from "react-icons/md";
-import { IoCloseSharp } from "react-icons/io5";
+import { personalData,  } from "../../components/data";
 import { FaCar, FaCheck } from "react-icons/fa6";
-import { MdAdd } from "react-icons/md";
+import {  MdEdit } from "react-icons/md";
 import { IoMdClose, IoMdRefresh } from "react-icons/io";
+import { Pagination } from "@mui/material";
 
 export default function StaticData() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchData, setSearchData] = useState(searchFilter);
-  const [showSearchFilter, setShowSearchFilter] = useState(false);
-  const [showFilter, setShowFilter] = useState(false);
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
   };
@@ -18,23 +14,6 @@ export default function StaticData() {
   const filteredPersonalData = personalData.filter((data) =>
     data.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
-
-  const handleToggle = (id) => {
-    setSearchData((prevSearchData) => {
-      const updatedSearchData = prevSearchData.map((item) => {
-        if (item.id === id) {
-          console.log(item.isTrue, id);
-          return {
-            ...item,
-            isTrue: !item.isTrue,
-          };
-        }
-        return item;
-      });
-      return updatedSearchData;
-    });
-  };
-
   const handleShow = (id) => {
     personalData.map((item) => {
       if (item.id === id) {
@@ -52,42 +31,9 @@ export default function StaticData() {
           type="text"
           placeholder="Поиск"
           className="w-96 border-2 pl-8 py-1 outline-none rounded-md"
-          value={searchQuery}
           onChange={handleSearchChange}
-          onClick={() => setShowSearchFilter(!showSearchFilter)}
         />
-        {showSearchFilter && (
-          <div className="z-20 w-96 border-2 rounded-md bg-[#f2f7f9d2] flex flex-col items-center absolute top-[95%] left-[1%]">
-            {searchData.map((search) => {
-              return (
-                <span
-                  key={search.id}
-                  className="flex items-center justify-between px-3 h-14 w-[100%] border-b-2"
-                >
-                  <p>{search.name}</p>
-                  <button
-                    className={`${
-                      search.isTrue ? "bg-blue-500" : "bg-gray-200"
-                    } relative inline-flex flex-shrink-0 h-7 w-14 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500`}
-                    onClick={() => handleToggle(search.id)}
-                  >
-                    <span
-                      className={`${
-                        search.isTrue ? "translate-x-7" : "translate-x-0"
-                      } inline-block h-6 w-6 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200`}
-                    />
-                  </button>
-                </span>
-              );
-            })}
-            <button
-              onClick={() => setShowSearchFilter(!showSearchFilter)}
-              className="bg-blue-500 w-full py-1 flex items-center justify-center text-white text-xl rounded-b-md"
-            >
-              <MdCloseFullscreen />
-            </button>
-          </div>
-        )}
+     
         <span className="absolute left-[1.5%]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -180,7 +126,6 @@ export default function StaticData() {
             Столбцы
           </p>
           <button
-            onClick={() => setShowFilter(!showFilter)}
             className="w-28 h-full flex items-center justify-center gap-1"
           >
             <svg
@@ -197,40 +142,12 @@ export default function StaticData() {
             </svg>
             Фильтр
           </button>
-          {showFilter && (
-            <div className="w-[564px] h-32 border-2 rounded-md bg-[#F7F9FB] flex  items-center justify-center absolute top-[95%] left-[50%]">
-              <div className="w-[95%] h-[80%] flex flex-wrap gap-x-4">
-                <select className="w-[292px] h-10 rounded-md flex items-center px-2 outline-none border-2">
-                  <option>Тип доставки</option>
-                  <option value="On foot">Пешком</option>
-                  <option value="Bike">Велосипед</option>
-                  <option value="In car">В машине</option>
-                </select>
-                <select className="w-[160px] h-10 rounded-md flex items-center px-2 outline-none border-2">
-                  <option value="Pickup">Самовывоз</option>
-                  <option value="Delivery">Доставка</option>
-                </select>
-                <button
-                  onClick={() => setShowFilter(!showFilter)}
-                  className="bg-[#F7665926] w-8 h-8 rounded-md flex items-center justify-center text-red-500 mt-1"
-                >
-                  <IoCloseSharp />
-                </button>
-                <button className="w-[180px] h-10 flex items-center justify-center gap-1 bg-[#38D9B9] rounded-md text-white text-sm font-semibold">
-                  {" "}
-                  <span className="text-lg fonb">
-                    <MdAdd />
-                  </span>{" "}
-                  Добавить филтер
-                </button>
-              </div>
-            </div>
-          )}
+       
         </div>
       </div>
 
       <div className="bg-[#DCE9F9] w-[100%] h-screen flex justify-center overflow-y-scroll py-5 ">
-        <div className="bg-white w-[97%] h-[1200px] flex flex-col items-center gap-5 rounded-md">
+        <div className="bg-white w-[97%] h-[1000px] flex flex-col items-center gap-5 rounded-md">
           <div className="w-[95%] border-b-2 flex items-center h-[5%]">
             <p className="text-[#6E8BB7] text-sm font-semibold px-5 border-b-[3px] h-full border-transparent hover:text-blue-500 transition-all cursor-pointer flex items-center hover:border-blue-500">
               Курьер в пути
@@ -254,7 +171,7 @@ export default function StaticData() {
           <div className="w-[95%] h-[90%] border-2 rounded-md relative">
             <div className="border-b-2 w-full h-12 flex justify-between">
               <span className="flex items-center w-14 h-full justify-center">
-                <input type="checkbox" className="w-5" />
+                <input type="checkbox"  className="w-5" />
               </span>
               <b className="w-12 h-full flex items-center justify-center">№</b>
               <b className=" px-1 w-[224px] h-full flex items-center justify-center">
@@ -293,7 +210,7 @@ export default function StaticData() {
                     <input type="checkbox" className="w-5" />
                   </span>
                   <b className="w-12 h-full flex items-center justify-center">
-                    1
+                    <p >{data.id}</p>
                   </b>
                   <span className="px-1 w-[224px] h-full flex flex-col justify-center items-center gap-1">
                     <p>{data.name}</p>
@@ -400,6 +317,8 @@ export default function StaticData() {
               );
             })}
           </div>
+          <Pagination className=" mb-4" count={86} shape="rounded" />
+
         </div>
       </div>
     </>

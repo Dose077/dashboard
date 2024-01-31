@@ -1,15 +1,7 @@
 import { useState } from "react";
-import { personalData, searchFilter } from "../../components/data";
-import { MdCloseFullscreen, MdEdit } from "react-icons/md";
-import { IoCloseSharp } from "react-icons/io5";
-import { FaCar, FaCheck } from "react-icons/fa6";
-import { MdAdd } from "react-icons/md";
-import { IoMdClose, IoMdRefresh } from "react-icons/io";
+import { personalData } from "../../../components/data";
 export default function ClientData() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchData, setSearchData] = useState(searchFilter);
-  const [showSearchFilter, setShowSearchFilter] = useState(false);
-  const [showFilter, setShowFilter] = useState(false);
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
   };
@@ -17,22 +9,6 @@ export default function ClientData() {
   const filteredPersonalData = personalData.filter((data) =>
     data.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
-
-  const handleToggle = (id) => {
-    setSearchData((prevSearchData) => {
-      const updatedSearchData = prevSearchData.map((item) => {
-        if (item.id === id) {
-          console.log(item.isTrue, id);
-          return {
-            ...item,
-            isTrue: !item.isTrue,
-          };
-        }
-        return item;
-      });
-      return updatedSearchData;
-    });
-  };
 
   const handleShow = (id) => {
     personalData.map((item) => {
@@ -46,47 +22,14 @@ export default function ClientData() {
 
   return (
     <>
-      <div className="w-full h-16 border flex justify-between items-center pl-4 bg-[#e5e9eb73] relative">
+      <div className="p-4 w-full h-16 border flex justify-between items-center pl-4 bg-white relative">
         <input
           type="text"
           placeholder="Поиск"
           className="w-96 border-2 pl-8 py-1 outline-none rounded-md"
-          value={searchQuery}
           onChange={handleSearchChange}
-          onClick={() => setShowSearchFilter(!showSearchFilter)}
         />
-        {showSearchFilter && (
-          <div className="z-20 w-96 border-2 rounded-md bg-[#f2f7f9d2] flex flex-col items-center absolute top-[95%] left-[1%]">
-            {searchData.map((search) => {
-              return (
-                <span
-                  key={search.id}
-                  className="flex items-center justify-between px-3 h-14 w-[100%] border-b-2"
-                >
-                  <p>{search.name}</p>
-                  <button
-                    className={`${
-                      search.isTrue ? "bg-blue-500" : "bg-gray-200"
-                    } relative inline-flex flex-shrink-0 h-7 w-14 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500`}
-                    onClick={() => handleToggle(search.id)}
-                  >
-                    <span
-                      className={`${
-                        search.isTrue ? "translate-x-7" : "translate-x-0"
-                      } inline-block h-6 w-6 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200`}
-                    />
-                  </button>
-                </span>
-              );
-            })}
-            <button
-              onClick={() => setShowSearchFilter(!showSearchFilter)}
-              className="bg-blue-500 w-full py-1 flex items-center justify-center text-white text-xl rounded-b-md"
-            >
-              <MdCloseFullscreen />
-            </button>
-          </div>
-        )}
+
         <span className="absolute left-[1.5%]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -109,10 +52,7 @@ export default function ClientData() {
           </svg>
         </span>
         <div className="px-5 flex items-center gap-2">
-          <button
-            onClick={() => setShowFilter(!showFilter)}
-            className="w-28 h-full flex items-center justify-center gap-1"
-          >
+          <button className="w-28 h-full flex items-center justify-center gap-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -127,35 +67,6 @@ export default function ClientData() {
             </svg>
             Фильтр
           </button>
-          {showFilter && (
-            <div className="w-[564px] h-32 border-2 rounded-md bg-[#F7F9FB] flex  items-center justify-center absolute top-[95%] left-[50%]">
-              <div className="w-[95%] h-[80%] flex flex-wrap gap-x-4">
-                <select className="w-[292px] h-10 rounded-md flex items-center px-2 outline-none border-2">
-                  <option>Тип доставки</option>
-                  <option value="On foot">Пешком</option>
-                  <option value="Bike">Велосипед</option>
-                  <option value="In car">В машине</option>
-                </select>
-                <select className="w-[160px] h-10 rounded-md flex items-center px-2 outline-none border-2">
-                  <option value="Pickup">Самовывоз</option>
-                  <option value="Delivery">Доставка</option>
-                </select>
-                <button
-                  onClick={() => setShowFilter(!showFilter)}
-                  className="bg-[#F7665926] w-8 h-8 rounded-md flex items-center justify-center text-red-500 mt-1"
-                >
-                  <IoCloseSharp />
-                </button>
-                <button className="w-[180px] h-10 flex items-center justify-center gap-1 bg-[#38D9B9] rounded-md text-white text-sm font-semibold">
-                  {" "}
-                  <span className="text-lg fonb">
-                    <MdAdd />
-                  </span>{" "}
-                  Добавить филтер
-                </button>
-              </div>
-            </div>
-          )}
         </div>
       </div>
 
@@ -259,95 +170,57 @@ export default function ClientData() {
           </div>
           <div className="bg-white w-[95%] h-[90%] flex items-center justify-center  rounded-md relative">
             <div className="border-2 rounded-md w-[95%] h-[95%]">
-            <div className="border-b-2 w-full h-12 flex justify-between">
-              <b className="h-full w-[776px] flex items-center pl-8 ">
-                Название
-              </b>
-              <b className="h-full w-[240px] flex items-center justify-center ">
-                Номер телефона
-              </b>
-              <b className="h-full w-[240px] flex items-center justify-center ">
-                Статус
-              </b>
-              <span className="w-12 h-full"></span>
-            </div>
-            {filteredPersonalData.map((data) => {
-              return (
-                <div
-                  key={data.id}
-                  className="border-b-2 w-full h-16 flex justify-between relative"
-                >
-                  <p className="h-full w-[776px] flex items-center pl-8">{data.name}</p>
-                  <p className="h-full w-[240px] flex items-center justify-center">{data.number}</p>
-                  <span className="h-full w-[240px] flex items-center justify-center">
-                    <p className="w-36 h-7 rounded-md bg-[#4094F726] flex items-center justify-center capitalize text-[#4094F7]">{data.type}</p>
-                  </span>
-                  <span className="w-12 h-full flex items-center justify-center">
-                    <button
-                      onClick={() => handleShow(data.id)}
-                      className="border-2 p-1 rounded-md"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 20 20"
-                        fill="none"
+              <div className="border-b-2 w-full h-12 flex justify-between">
+                <b className="h-full w-[776px] flex items-center pl-8 ">
+                  Название
+                </b>
+                <b className="h-full w-[240px] flex items-center justify-center ">
+                  Номер телефона
+                </b>
+                <b className="h-full w-[240px] flex items-center justify-center ">
+                  Статус
+                </b>
+                <span className="w-12 h-full"></span>
+              </div>
+              {filteredPersonalData.map((data) => {
+                return (
+                  <div
+                    key={data.id}
+                    className="border-b-2 w-full h-16 flex justify-between relative"
+                  >
+                    <p className="h-full w-[776px] flex items-center pl-8">
+                      {data.name}
+                    </p>
+                    <p className="h-full w-[240px] flex items-center justify-center">
+                      {data.number}
+                    </p>
+                    <span className="h-full w-[240px] flex items-center justify-center">
+                      <p className="w-36 h-7 rounded-md bg-[#4094F726] flex items-center justify-center capitalize text-[#4094F7]">
+                        {data.type}
+                      </p>
+                    </span>
+                    <span className="w-12 h-full flex items-center justify-center">
+                      <button
+                        onClick={() => handleShow(data.id)}
+                        className="border-2 p-1 rounded-md"
                       >
-                        <path
-                          d="M6.66671 9.99992C6.66671 10.4419 6.49111 10.8659 6.17855 11.1784C5.86599 11.491 5.44207 11.6666 5.00004 11.6666C4.55801 11.6666 4.13409 11.491 3.82153 11.1784C3.50897 10.8659 3.33337 10.4419 3.33337 9.99992C3.33337 9.55789 3.50897 9.13397 3.82153 8.82141C4.13409 8.50885 4.55801 8.33325 5.00004 8.33325C5.44207 8.33325 5.86599 8.50885 6.17855 8.82141C6.49111 9.13397 6.66671 9.55789 6.66671 9.99992ZM11.6667 9.99992C11.6667 10.4419 11.4911 10.8659 11.1786 11.1784C10.866 11.491 10.4421 11.6666 10 11.6666C9.55801 11.6666 9.13409 11.491 8.82153 11.1784C8.50897 10.8659 8.33337 10.4419 8.33337 9.99992C8.33337 9.55789 8.50897 9.13397 8.82153 8.82141C9.13409 8.50885 9.55801 8.33325 10 8.33325C10.4421 8.33325 10.866 8.50885 11.1786 8.82141C11.4911 9.13397 11.6667 9.55789 11.6667 9.99992ZM15 11.6666C15.4421 11.6666 15.866 11.491 16.1786 11.1784C16.4911 10.8659 16.6667 10.4419 16.6667 9.99992C16.6667 9.55789 16.4911 9.13397 16.1786 8.82141C15.866 8.50885 15.4421 8.33325 15 8.33325C14.558 8.33325 14.1341 8.50885 13.8215 8.82141C13.509 9.13397 13.3334 9.55789 13.3334 9.99992C13.3334 10.4419 13.509 10.8659 13.8215 11.1784C14.1341 11.491 14.558 11.6666 15 11.6666Z"
-                          fill="#4094F7"
-                        />
-                      </svg>
-                    </button>
-                  </span>
-                  {data.isEdit === true && (
-                    <div className="z-30 w-64 h-64 bg-[#fff] flex flex-col rounded-md justify-between absolute left-[75%] shadow-xl">
-                      <button className="w-full py-2 flex items-center justify-between px-3">
-                        <span className="w-8 h-8 rounded-md text-xl bg-[#FDF5CA] text-[#D29404] flex items-center justify-center">
-                          <IoMdRefresh />
-                        </span>
-                        <p className="text-black text-sm font-medium">
-                          Повторить выставить счет
-                        </p>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                        >
+                          <path
+                            d="M6.66671 9.99992C6.66671 10.4419 6.49111 10.8659 6.17855 11.1784C5.86599 11.491 5.44207 11.6666 5.00004 11.6666C4.55801 11.6666 4.13409 11.491 3.82153 11.1784C3.50897 10.8659 3.33337 10.4419 3.33337 9.99992C3.33337 9.55789 3.50897 9.13397 3.82153 8.82141C4.13409 8.50885 4.55801 8.33325 5.00004 8.33325C5.44207 8.33325 5.86599 8.50885 6.17855 8.82141C6.49111 9.13397 6.66671 9.55789 6.66671 9.99992ZM11.6667 9.99992C11.6667 10.4419 11.4911 10.8659 11.1786 11.1784C10.866 11.491 10.4421 11.6666 10 11.6666C9.55801 11.6666 9.13409 11.491 8.82153 11.1784C8.50897 10.8659 8.33337 10.4419 8.33337 9.99992C8.33337 9.55789 8.50897 9.13397 8.82153 8.82141C9.13409 8.50885 9.55801 8.33325 10 8.33325C10.4421 8.33325 10.866 8.50885 11.1786 8.82141C11.4911 9.13397 11.6667 9.55789 11.6667 9.99992ZM15 11.6666C15.4421 11.6666 15.866 11.491 16.1786 11.1784C16.4911 10.8659 16.6667 10.4419 16.6667 9.99992C16.6667 9.55789 16.4911 9.13397 16.1786 8.82141C15.866 8.50885 15.4421 8.33325 15 8.33325C14.558 8.33325 14.1341 8.50885 13.8215 8.82141C13.509 9.13397 13.3334 9.55789 13.3334 9.99992C13.3334 10.4419 13.509 10.8659 13.8215 11.1784C14.1341 11.491 14.558 11.6666 15 11.6666Z"
+                            fill="#4094F7"
+                          />
+                        </svg>
                       </button>
-                      <button className="w-full py-2 flex items-center justify-between px-3">
-                        <span className="w-8 h-8 rounded-md text-xl bg-[#F6EBFD] text-[#C479F3] flex items-center justify-center">
-                          <FaCar />
-                        </span>
-                        <p className="text-black text-sm font-medium">
-                          Курьер отменил
-                        </p>
-                      </button>
-                      <button className="w-full py-2 flex items-center justify-between px-3">
-                        <span className="w-8 h-8 rounded-md text-xl bg-[#E3EFFE] text-[#4094F7] flex items-center justify-center">
-                          <MdEdit />
-                        </span>
-                        <p className="text-black text-sm font-medium">
-                          Изменить
-                        </p>
-                      </button>
-                      <button className="w-full py-2 flex items-center justify-between px-3">
-                        <span className="w-8 h-8 rounded-md text-xl bg-[#FEE8E6] text-[#F76659] flex items-center justify-center">
-                          <IoMdClose />
-                        </span>
-                        <p className="text-black text-sm font-medium">
-                          Отменено
-                        </p>
-                      </button>
-                      <button className="w-full py-2 flex items-center justify-between px-3">
-                        <span className="w-8 h-8 rounded-md text-xl bg-[#DDF6F1] text-[#1AC19D] flex items-center justify-center">
-                          <FaCheck />
-                        </span>
-                        <p className="text-black text-sm font-medium">
-                          Завершить
-                        </p>
-                      </button>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
+                    </span>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

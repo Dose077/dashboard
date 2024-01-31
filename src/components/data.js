@@ -1,5 +1,4 @@
 
-import { uid } from "uid";
 
 export const months = [
     'January', 
@@ -121,25 +120,17 @@ export const report = [
 ];
 
 
-// function generateSevenDigitNumber() {
-//   return Math.floor(1000000 + Math.random() * 9000000);
-// }
-
-// const uid() = generateSevenDigitNumber();
-// // console.log(uid());
-
-// const id = uid()
 
 
 export const personalData = [
   {
     name: 'Арсений Морозов',
     number: '+998 (90) 123-45-67',
-    id: uid(),
+    id: 1,
     timer: '02:33:48',
     branch: 'Марк Васильев',
     phone: '+998 (90) 123-45-67',
-    type:'delivery',
+    type:'доставка',
     typeSecond:'pick up',
     typeThird: 'cancel',
     price: 888,
@@ -149,11 +140,11 @@ export const personalData = [
   {
     name: 'Арсений Морозов',
     number: '+998 (90) 123-45-67',
-    id: uid(),
+    id: 2,
     timer: '02:33:48',
     branch: 'Марк Васильев',
     phone: '+998 (90) 123-45-67',
-    type:'delivery',
+    type:'доставка',
     typeSecond:'pick up',
     typeThird: 'cancel',
     price: 888,
@@ -163,11 +154,11 @@ export const personalData = [
   {
     name: 'unknown',
     number: '+998 (90) 123-45-67',
-    id: uid(),
+    id: 3,
     timer: '02:33:48',
     branch: 'Марк Васильев',
     phone: '+998 (90) 123-45-67',
-    type:'delivery',
+    type:'доставка',
     typeSecond:'pick up',
     typeThird: 'cancel',
     price: 888,
@@ -177,11 +168,11 @@ export const personalData = [
   {
     name: 'Elzabet Delica',
     number: '+998 (90) 123-45-67',
-    id: uid(),
+    id: 4,
     timer: '02:33:48',
     branch: 'Марк Васильев',
     phone: '+998 (90) 123-45-67',
-    type:'delivery',
+    type:'доставка',
     typeSecond:'pick up',
     typeThird: 'cancel',
     price: 888,
@@ -191,11 +182,11 @@ export const personalData = [
   {
     name: 'Karmila Smith',
     number: '+998 (90) 123-45-67',
-    id: uid(),
+    id: 5,
     timer: '02:33:48',
     branch: 'Марк Васильев',
     phone: '+998 (90) 123-45-67',
-    type:'delivery',
+    type:'доставка',
     typeSecond:'pick up',
     typeThird: 'cancel',
     price: 888,
@@ -205,11 +196,11 @@ export const personalData = [
   {
     name: 'Serdar Otech',
     number: '+998 (90) 123-45-67',
-    id: uid(),
+    id: 6,
     timer: '02:33:48',
     branch: 'Марк Васильев',
     phone: '+998 (90) 123-45-67',
-    type:'delivery',
+    type:'доставка',
     typeSecond:'pick up',
     typeThird: 'cancel',
     price: 888,
@@ -219,11 +210,11 @@ export const personalData = [
   {
     name: 'Ali Yazde',
     number: '+998 (90) 123-45-67',
-    id: uid(),
+    id: 7,
     timer: '01:33:48',
     branch: 'Марк Васильев',
     phone: '+998 (90) 123-45-67',
-    type:'delivery',
+    type:'доставка',
     typeSecond:'pick up',
     typeThird: 'cancel',
     price: 888,
@@ -233,11 +224,11 @@ export const personalData = [
   {
     name: 'Zaik Burdan',
     number: '+998 (90) 123-45-67',
-    id: uid(),
+    id: 8,
     timer: '01:33:48',
     branch: 'Марк Васильев',
     phone: '+998 (90) 123-45-67',
-    type:'delivery',
+    type:'доставка',
     typeSecond:'pick up',
     typeThird: 'cancel',
     price: 120,
@@ -247,11 +238,11 @@ export const personalData = [
   {
     name: 'Alisa Jekom',
     number: '+998 (90) 123-45-67',
-    id: uid(),
+    id: 9,
     timer: '01:33:48',
     branch: 'Марк Васильев',
     phone: '+998 (90) 123-45-67',
-    type:'delivery',
+    type:'доставка',
     typeSecond:'pick up',
     typeThird: 'cancel',
     price: 614,
@@ -261,11 +252,11 @@ export const personalData = [
   {
     name: 'Tom Hinland',
     number: '+998 (90) 123-45-67',
-    id: uid(),
+    id: 10,
     timer: '03:03:48',
     branch: 'Марк Васильев',
     phone: '+998 (90) 123-45-67',
-    type:'delivery',
+    type:'доставка',
     typeSecond:'pick up',
     typeThird: 'cancel',
     price: 985,
@@ -275,11 +266,11 @@ export const personalData = [
   {
     name: 'Kagura Anna',
     number: '+998 (90) 123-45-67',
-    id: uid(),
+    id: 11,
     timer: '03:03:48',
     branch: 'Марк Васильев',
     phone: '+998 (90) 123-45-67',
-    type:'delivery',
+    type:'доставка',
     typeSecond:'pick up',
     typeThird: 'cancel',
     price: 367,
@@ -289,179 +280,23 @@ export const personalData = [
   {
     name: 'Fredrin Borden',
     number: '+998 (90) 123-45-67',
-    id: uid(),
-    timer: '03:03:48',
-    branch: 'Марк Васильев',
-    phone: '+998 (90) 123-45-67',
-    type:'delivery',
-    typeSecond:'pick up',
-    typeThird: 'cancel',
-    price: 485,
-    clientAddress: 'ул. Байкальская‚ д. 52‚ кв. 22',
-    isEdit: false
-  },
-  {
-    name: 'Harley Smith',
-    number: '+998 (90) 123-45-67',
-    id: uid(),
-    timer: '03:03:48',
-    branch: 'Марк Васильев',
-    phone: '+998 (90) 123-45-67',
-    type:'delivery',
-    typeSecond:'pick up',
-    typeThird: 'cancel',
-    price: 985,
-    clientAddress: 'ул. Байкальская‚ д. 52‚ кв. 22',
-    isEdit: false
-  },
-  {
-    name: 'Lesly Ziakowski',
-    number: '+998 (90) 123-45-67',
-    id: uid(),
-    timer: '03:03:48',
-    branch: 'Марк Васильев',
-    phone: '+998 (90) 123-45-67',
-    type:'delivery',
-    typeSecond:'pick up',
-    typeThird: 'cancel',
-    price: 367,
-    clientAddress: 'ул. Байкальская‚ д. 52‚ кв. 22',
-    isEdit: false
-  },
-  {
-    name: 'Brody Kaguya',
-    number: '+998 (90) 123-45-67',
-    id: uid(),
-    timer: '03:03:48',
-    branch: 'Марк Васильев',
-    phone: '+998 (90) 123-45-67',
-    type:'delivery',
-    typeSecond:'pick up',
-    typeThird: 'cancel',
-    price: 485,
-    clientAddress: 'ул. Байкальская‚ д. 52‚ кв. 22',
-    isEdit: false
-  },
-  {
-    name: 'Lisa Jones',
-    number: '+998 (90) 123-45-67',
-    id: uid(),
-    timer: '03:03:48',
-    branch: 'Марк Васильев',
-    phone: '+998 (90) 123-45-67',
-    type:'delivery',
-    typeSecond:'pick up',
-    typeThird: 'cancel',
-    price: 485,
-    clientAddress: 'ул. Байкальская‚ д. 52‚ кв. 22',
-    isEdit: false
-  },
-]
-
-
-export const searchFilter = [
-  {
-    id: 1,
-    name: '№',
-    isTrue: false,
-  },
-  {
-    id: 2,
-    name: 'Клиент',
-    isTrue: false,
-  },
-  {
-    id: 3,
-    name: 'Ид.заказа',
-    isTrue: false,
-  },
-  {
-    id: 4,
-    name: 'Таймер',
-    isTrue: false,
-  },
-  {
-    id: 5,
-    name: 'Курьер',
-    isTrue: false,
-  },
-  {
-    id: 6,
-    name: 'Филиал',
-    isTrue: false,
-  },
-  {
-    id: 7,
-    name: 'Тип доставки',
-    isTrue: false,
-  },
-  {
-    id: 8,
-    name: 'Цена заказа',
-    isTrue: false,
-  },
-]
-
-
-export const food = [
-  {
-    id: 1,
-    name: "Qazi pitsa",
-    price: 63000,
-  },
-  {
-    id: 2,
-    name: "Go'shtli miks",
-    price: 92000,
-  },
-  {
-    id: 3,
-    name: "Kartoshka fri",
-    price: 17000,
-  },
-  {
-    id: 4,
-    name: "Tovuqli Bellisster",
-    price: 24000,
-  },
-  {
-    id: 5,
-    name: "Breadstik",
-    price: 21000,
-  },
-  {
-    id: 6,
-    name: "Coca-Cola",
-    price: 13000,
-  },
-  {
-    id: 7,
-    name: "Fanta",
-    price: 13000,
-  },
-  {
-    id: 8,
-    name: "Moxito",
-    price: 14000,
-  },
-  {
-    id: 9,
-    name: "Grecheskiy salat",
-    price: 24000,
-  },
-  {
-    id: 10,
-    name: "Sezer salat",
-    price: 24000,
-  },
-  {
-    id: 11,
-    name: "Shokoladli Fondan",
-    price: 19000,
-  },
-  {
     id: 12,
-    name: "Classik chizkeyk",
-    price: 22000,
+    timer: '03:03:48',
+    branch: 'Марк Васильев',
+    phone: '+998 (90) 123-45-67',
+    type:'доставка',
+    typeSecond:'pick up',
+    typeThird: 'cancel',
+    price: 485,
+    clientAddress: 'ул. Байкальская‚ д. 52‚ кв. 22',
+    isEdit: false
   },
+ 
+  
+ 
 ]
+
+
+
+
+
